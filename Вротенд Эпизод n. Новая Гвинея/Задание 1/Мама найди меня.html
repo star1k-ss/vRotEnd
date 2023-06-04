@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Надя</title>
+    <style>
+        input {width: 40%; text-align: center;margin-bottom: 12px;}
+	    body{text-align:center}
+        span
+        {
+            margin-top: 12px;
+        }
+        body
+        {
+            color: azure;
+            font-size: 28px;
+            background-color:pink;
+            background-image: url("C://users/stalk/desktop/Мой сайт/background.jpg"); 
+            background-size: cover;
+            background-attachment: fixed;
+        }
+        .logoheader
+        {
+            width:auto;
+            height: 90px;
+            display: flex;
+            flex-wrap: nowrap;
+            border: 2px dotted rgba(255, 0, 128, 0.3);
+            border-bottom: 4px solid rgba(255, 0, 128, 0.3) !important;
+        }
+        .logoheader div
+        {
+            overflow: hidden;
+            align-items: center;
+            height: 90px;
+            display: flex;
+            flex-wrap: nowrap;
+        }
+        .logoheader div:last-child 
+        {
+            display:flex;
+            align-items: center;
+            width: auto;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .logoheader div img
+        {
+            border: none !important;
+        }
+        .logoheader div:first-child 
+        {
+            border-right: 2px dotted rgba(255, 0, 128, 0.3);
+            justify-content: start;            
+        }
+        .logoheader div:first-child span
+        {
+            margin-right: 20px !important;
+            margin-left:20px !important;
+        }
+        #main
+        {
+            justify-content: center;
+            display: flex;
+            flex-wrap: nowrap;
+            border: 4px solid rgba(255, 0, 128, 0.3);
+            height: auto;
+        }
+        .main
+        {
+            /* background-color: aquamarine; */
+            border-right: 4px solid rgba(255, 0, 128, 0.3);
+            align-content:flex-start;
+            height: auto;
+            width: 70%;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        .main div
+        {
+            align-items: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column !important;
+            flex-grow: 1;
+            align-content:start;
+        }
+        .main div div
+        {
+            
+            width: auto;
+            margin:0px 12px 12px 12px;
+            text-align: start;
+            /*word-wrap:break-word;
+            word-break:break-all;*/
+            text-overflow:clip;
+        }
+        .links
+        {
+            flex-wrap: nowrap;
+            flex-direction: column;
+            width: 30%;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+        .links a
+        {
+            color: crimson;
+            text-decoration: none;
+            display: flex;
+            align-items: stretch;
+            justify-content: center;
+            width:100%;
+            border-bottom: 4px solid rgba(255, 0, 128, 0.3);
+        }
+        .links a:hover
+        {
+            background-color: rgba(255, 0, 43, 0.7);
+            display: flex;
+            color: whitesmoke;
+            transition: 250ms;     
+        }
+        .links a:last-child
+        {
+            border-bottom: none;
+        }
+        .links a img
+        {
+            height:32px; 
+            width:32px;
+            margin-right:2px;
+        }
+        #navigation
+        {
+            width:100%;
+            display: flex;
+            flex-wrap: wrap;
+			flex-direction: row;
+			align-items: center;
+            justify-content: space-evenly;
+        }
+        .butt 
+        {
+            width:inherit;
+			height: 100%;
+			opacity: 0.7;
+			display: flex;
+            flex-wrap: wrap;
+			flex-direction: row;
+			align-items: center;
+            justify-content: space-evenly;
+			background-color: rgb(255, 0, 85);		
+		}
+		.butt a 
+        {
+            display: flex;
+            flex-grow: 1;
+            align-items: center;
+            justify-content: center;
+            text-decoration:none;
+            color: white;
+            padding-left: 8px;
+            padding-right: 8px;
+            font-size: 22px;
+            height: 60px;
+            text-align: center;
+        }
+		.butt a:hover
+        {
+            
+            transition: 350ms;
+            display: flex;
+            text-decoration: none;
+			background-color: rgba(255, 0, 200, 0.548); 
+            align-items: center; 
+            justify-content: center;
+        } 
+        button {width: 20% !important; margin: auto; font-size: 20px; margin-top:12px;opacity: 0.8}
+        button:hover
+        {
+            transform: scale(1.2);
+            transition: 150ms;
+        }
+        #karti
+        {
+            display: flex;
+            flex-direction: row !important;
+            justify-content: space-evenly;
+        }
+        #k1, #k2, #k3
+        {
+            display:flex;
+            flex-direction: column;
+        }
+        /*Стили таблицы*/
+        table.iksweb
+        {
+	    
+	        border-collapse:collapse;
+	        border-spacing:0;
+	        height: auto;
+        }
+        table.iksweb,table.iksweb td, table.iksweb th 
+        {
+	        border: 1px solid #595959;
+        }
+        table.iksweb td,table.iksweb th 
+        {
+            width: 80px !important;
+            height: 80px !important;
+	        padding: 3px;
+        }
+        table.iksweb th 
+        {
+	        background: #347c99; 
+	        color: #fff; 
+	        font-weight: normal;
+        }
+        td.active 
+        {
+             background-color: red;
+        }
+        .p1
+        {
+            text-shadow: 5px -10px 0px red;
+        }
+        #myBlock {
+            width: 200px;
+            height: 200px;
+            background-color: crimson;
+            box-shadow: 20px 15px 5px red;
+        }
+        .ol2
+		{
+			list-style-type: none;
+			width: auto;
+			
+		}
+		.ol2 li
+		{
+			display:inline-block;
+			background-color: whitesmoke;
+		}
+		.ol2 li a
+		{
+			text-decoration: none;
+			border: 1px solid blue;
+			color: rgb(0, 110, 255);
+			display: flex;
+			font-size:28px;
+			align-items: center;
+			padding: 15px;
+		}
+		.ol2 li:hover
+		{
+			transform:rotate(10deg)
+		}
+		.li11 
+		{
+            transform:rotate(10deg)
+		}
+		.ol2 li:hover a
+		{
+			
+		}
+        .ol3
+		{
+            transform: rotate(-3deg);
+			list-style-type: none;
+			width: auto;
+			
+		}
+		.ol3 li
+		{
+			display:inline-block;
+			background-color: whitesmoke;
+		}
+		.ol3 li a
+		{
+			text-decoration: none;
+			border: 1px solid blue;
+			color: rgb(0, 110, 255);
+			display: flex;
+			font-size:28px;
+			align-items: center;
+			padding: 15px;
+		}
+		.ol3 li:hover
+		{
+            transform: skewX(-5deg) scale(1.1);
+		}
+        .ol4
+		{
+            transform: skewX(-5deg);
+			list-style-type: none;
+			width: auto;
+			
+		}
+		.ol4 li
+		{
+			display:inline-block;
+			background-color: whitesmoke;
+		}
+		.ol4 li a
+		{
+			text-decoration: none;
+			border: 1px solid blue;
+			color: rgb(0, 110, 255);
+			display: flex;
+			font-size:28px;
+			align-items: center;
+			padding: 15px;
+		}
+		.ol4 li:hover
+		{
+            transform: scale(1.2);
+		}
+        div.rotik 
+        {
+            display:flex !important;
+            flex-direction: row !important;
+            flex-wrap: nowrap !important;
+            justify-content: center !important;
+        }
+        #s1 
+        {
+            transform: skewX(8deg);
+        }
+        .blck
+        {
+            width: 230px !important;
+            height: 230px !important;
+            border: 1px solid black;
+            background-color: lawngreen;
+            background: linear-gradient(0.25turn, red, blue) ;
+        }
+        div.anim
+        {
+            width:330px !important;
+            height:330px !important;
+            border:1px solid rgba(255, 255, 255 ,0);
+            border-radius:50%; 
+            margin: 40px !important;
+        }
+        div.circle
+        {
+            margin: 150px !important;
+            flex-grow: 0;
+            width:30px !important;
+            height:30px !important;
+            overflow: hidden;
+            background-color: red;
+            border-radius:50% !important;
+            animation: circle 6s linear infinite;
+            transition: 1000ms;
+        }
+        div.circ
+        {
+            display:block;
+            width: 120px !important;
+            height: 120px !important;
+            border-radius: 50%;
+            border: 2px solid red;
+            position:absolute;
+            top:170.5%; bottom:0; left:29.75%;right:0;
+        }
+        @keyframes circle
+        {
+            0%
+            {
+                transform:rotate(0deg)
+                translate(-165px)
+                rotate(0deg);
+  
+            }
+            100%
+            {
+                transform:rotate(360deg)
+                translate(-165px)
+                rotate(-360deg);
+            }
+        }
+        canvas
+        {
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function draw()
+        {
+            canvas = document.getElementById("mama")
+            if (canvas.getContext)
+             {
+                ctx = canvas.getContext("2d")
+                ctx.beginPath()
+                ctx.arc(75,75,50,0,Math.PI*2,true) // Внешняя окружность
+                ctx.moveTo(85,75)
+                ctx.arc(75,75,10,0,Math.PI,false)  // рот (по часовой стрелке)
+                ctx.moveTo(65,65)
+                ctx.arc(60,65,5,0,Math.PI*2,true)  // Левый глаз
+                ctx.moveTo(95,65)
+                ctx.arc(90,65,5,0,Math.PI*2,true)
+                ctx.stroke()
+            }
+        }
+    </script>
+	<div class="logoheader">
+        <div style="width:30%">
+            <img src="c:/users/stalk/desktop/Мамочка прости/pngwing.com.png"></img>
+            <span>Логотип<span>
+        </div>
+        <div style="width: 70%">
+            <p>Полноценный сайт</p>
+            <span>В.Н. Горбачик</span>
+        </div>
+    </div>
+	<div id="main">
+    <div class="main">
+        <canvas id="mama" onclick="draw()"></canvas>
+    </div>
+	<div class="links">
+        <a href="C:/users/stalk/desktop/Lab1/lab1.html" target=»_blank»><img src="C://users/stalk/desktop/Мой сайт/Logo3.png">ссылка 1</a>
+        <a href="C:/users/stalk/desktop/lab3/fam.html" target=»_blank»;><img src="C://users/stalk/desktop/Мой сайт/матрена.png">ссылка 2</a>
+        <a href="C:/users/stalk/desktop/lab1/фамилия3.html" target=»_blank»;><img src="C://users/stalk/desktop/Мой сайт/инвалид.png">ссылка 3</a>
+    </div>
+</body>
+</html>
