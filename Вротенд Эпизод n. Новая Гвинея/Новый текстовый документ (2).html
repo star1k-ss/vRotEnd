@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Мой красивый сайт</title>
+  <style>
+	body{transition:1ms; transform: rotate(3600deg)}
+    /* Стили для блочных элементов */
+    .block {
+      background-color: #f2f2f2;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+    
+    /* Стили для ссылочных панелей */
+    .panel {
+      background-color: #c0c0c0;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      text-align: center;
+    }
+	.panel:hover
+	{
+		transition: 1000s;
+		transform: rotate(36000000deg)
+	}
+    
+    /* Общие стили для контейнера и элементов */
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="block">
+      <h2>Блок 1</h2>
+      <p>Содержимое блока 1</p>
+    </div>
+    
+    <div class="block">
+      <h2>Блок 2</h2>
+      <p>Содержимое блока 2</p>
+    </div>
+    
+    <div class="block">
+      <h2>Блок 3</h2>
+      <p>Содержимое блока 3</p>
+    </div>
+    
+    <div class="panel">
+      <h2>Ссылочная панель 1</h2>
+      <a href="#">Ссылка 1</a>
+      <a href="#">Ссылка 2</a>
+    </div>
+    
+    <div class="block">
+      <h2>Блок 4</h2>
+      <p>Содержимое блока 4</p>
+    </div>
+    
+    <div class="block">
+      <h2>Блок 5</h2>
+      <p>Содержимое блока 5</p>
+    </div>
+    
+    <div class="panel">
+      <h2>Ссылочная панель 2</h2>
+      <a href="#">Ссылка 3</a>
+      <a href="#">Ссылка 4</a>
+    </div>
+  </div>
+
+  <script>
+    function changeBackgroundColor() {
+      var container = document.querySelector('body');
+      var colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#00ffff', '#ff00ff'];
+      var randomColor = colors[Math.floor(Math.random() * colors.length)];
+      container.style.backgroundColor = randomColor;
+    }
+
+    setInterval(changeBackgroundColor, 1); // Изменение цвета фона каждые 2 секунды
+  </script>
+</body>
+</html>
